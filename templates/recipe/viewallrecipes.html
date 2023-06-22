@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/recipe/viewallrecipes.css' %}">
+{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" placeholder="Search..." id="search" name="search" value="{{ search_term }}">
+        <button type="submit">Search</button>
+    </form>
+
+    <h1>All Recipes</h1>
+    <ul class="recipe-list">
+        {% for recipe in recipes %}
+            <li class="recipe-item">
+                <div class="title-container">
+                            <span class="recipe-title">{{ recipe.title }}
+                            </span>
+                </div>
+                <a href="{% url 'view_recipe' recipe.id %}">
+                    <div class="image-container">
+                        <img src="{{ recipe.photo.url }}" alt="Recipe Image" width="200" height="200">
+                    </div>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

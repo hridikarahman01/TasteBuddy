@@ -1,0 +1,138 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.recipe-details {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.recipe-details h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.recipe-details a {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.recipe-details a:hover {
+  background-color: #0056b3;
+}
+
+.recipe-details p, .recipe-details img {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.instructions {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.instructions .instruction p, .instructions .instruction img {
+  margin-top: 10px;
+  height: 500px;
+  width: 100%
+}
+
+.like-button {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.like-button a {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #dc3545;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.like-button a:hover {
+  background-color: #c82333;
+}
+
+.video {
+  max-width: 800px;
+  margin: 20px auto;
+}
+
+.comments {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.comments .comment {
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.comments a {
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: #dc3545;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.comments a:hover {
+  background-color: #c82333;
+}
+
+.comments form {
+  margin-top: 20px;
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+}
+
+.comments textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+}
+
+.comments input[type="submit"] {
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.comments input[type="submit"]:hover {
+  background-color: #0056b3;
+}

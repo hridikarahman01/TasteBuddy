@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/home/index.css' %}">
+{% endblock %}
+
+{% block content %}
+<p align="center">
+    <a href="{% url 'view_all_recipes' %}" class="discover-recipes">
+        <span class="discover-text">Discover Recipes Around the World</span>
+    </a>
+</p>
+<div class="recommended-recipes">
+    <h2>Recommended for you</h2>
+    {% for recipe in recommended_recipes %}
+        <div class="recipe">
+            <a href="{% url 'view_recipe' recipe.id %}">
+                <img src="{{ recipe.photo.url }}" alt="{{ recipe.title }}">
+                <h3>{{ recipe.title }}</h3>
+            </a>
+            <p>{{ recipe.description|truncatewords:20 }}</p>
+            <p>Category: {{ recipe.category }}</p>
+            <p>By: {{ recipe.author.username }}</p>
+        </div>
+    {% empty %}
+        <p>No recommendations available at this time.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+{% block js %}
+    <script src="{% static 'js/home/index.js' %}"></script>
+{% endblock %}

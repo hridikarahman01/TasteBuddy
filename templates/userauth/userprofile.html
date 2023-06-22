@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/userauth/profile.css' %}">
+{% endblock css %}
+
+{% block content %}
+    <div class="container">
+        <h2>Profile
+        <a href="{% url 'editprofile' %}"><button class="btn btn-primary">Edit Profile</button></a>
+        </h2>
+
+        <p>Username: {{ user.username }}</p>
+
+        <p>Email: {{ user.email }}</p>
+
+        <p>First Name: {{ user.first_name }}</p>
+
+        <p>Last Name: {{ user.last_name }}</p>
+
+        <h2> My Recipes </h2>
+
+        {% for recipe in recipes %}
+
+        <a href="{% url 'view_recipe' recipe.id %}">{{ recipe.title }}</a> <br>
+
+        {% endfor %}
+
+        <h2> Liked Recipes </h2>
+
+        {% for recipe in liked_recipes %}
+
+        <a href="{% url 'view_recipe' recipe.id %}">{{ recipe.title }}</a> <br>
+
+        {% endfor %}
+{% endblock content %}

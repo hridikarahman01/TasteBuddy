@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Create a Recipe{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/recipe/recipe_input.css' %}">
+{% endblock %}
+
+{% block content %}
+  <h2>Edit Your Recipe</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="form-group">
+      <label>Title:</label>
+      <input type="text" class="form-control" name="title" value="{{recipe.title}}" required>
+    </div>
+    <div class="form-group">
+      <label>Category:</label>
+      <select class="form-control" name="category">
+        {% for category in categories %}
+          <option value="{{ category.id }}"
+            {% if category.id == recipe.category.id %}
+              selected
+            {% endif %}
+          >{{ category.name }}</option>
+        {% endfor %}
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Description:</label>
+      <textarea class="form-control" name="description" required> {{recipe.description}} </textarea>
+    </div>
+    <div class="form-group">
+      <label>Time Required:</label>
+      <input type="text" class="form-control" name="time_required" value="{{recipe.time_required}}">
+    </div>
+    <div class="form-group">
+      <label>Calory count:</label>
+      <input type="number" class="form-control" name="calory_count" value="{{recipe.calories}}">
+    </div>
+    <div class="form-group">
+      <label>Ingredients:</label>
+      <textarea class="form-control" name="ingredients" required> {{recipe.ingredients}} </textarea>
+    </div>
+    <div class="form-group">
+      <label>Photo:</label>
+      <input type="file" class="form-control-file" name="photo">
+    </div>
+    <div class="form-group">
+      <label>Video:</label>
+      <input type="text" class="form-control" name="video" value="{{recipe.video}}">
+    </div>
+    <button type="submit" class="btn btn-primary">Edit Recipe</button>
+  </form>
+{% endblock %}
+{% block js %}
+  <script src="{% static 'js/recipe/addrecipe.js' %}"></script>
+{% endblock %}

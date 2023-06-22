@@ -1,0 +1,27 @@
+/* style.css */
+
+.top-bar {
+    background-color: #f7f7f7;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    text-align: center; /* Center-align the menu items */
+}
+
+.top-bar a {
+    display: inline-block;
+    margin: 0 10px; /* Add horizontal margin for spacing between items */
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.top-bar a:last-child {
+    margin-right: 0; /* Remove margin on the last item */
+}
+
+.top-bar a:hover {
+    background-color: #45a049;
+}

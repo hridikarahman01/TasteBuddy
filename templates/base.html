@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Tastebuddy</title>
+    <link rel="icon" href="{% static 'img/logo.png' %}">
+    <link rel="stylesheet" href="{% static 'css/basestyle.css' %}">
+    {% block css %}{% endblock %}
+</head>
+<body bgcolor="white">
+        <div class="top-bar">
+            <a href="{% url 'home' %}" class="button">Home</a>
+            <a href="{% url 'profile' user.username %}" class="button">Profile</a>
+            <a href="{% url 'view_all_recipes' %}" class="button">View Recipes</a>
+            <a href="{% url 'add_recipe' %}" class="button">Create a New Recipe</a>
+            <a href="{% url 'view_user_recipes' user.username %}" class="button">My Recipes</a>
+            <a href="{% url 'signout' %}" class="button">Logout</a>
+        </div>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+        <div class="footer">
+        </div>
+    {% block js %}{% endblock %}
+</body>
+</html>

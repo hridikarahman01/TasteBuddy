@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h2>Upload Images</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% for step in steps %}
+    <label for="{{step.id}}">{{ forloop.counter }}. {{step.step}}</label>
+    <input type="file" class="form-control-file" name="{{step.id}}"> <br> <br>
+    {% endfor %}
+    <input type="submit" value="Upload"/>
+</form>
+{% endblock %}
